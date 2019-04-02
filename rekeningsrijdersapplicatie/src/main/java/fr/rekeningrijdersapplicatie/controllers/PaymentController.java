@@ -1,7 +1,8 @@
 package fr.rekeningrijdersapplicatie.controllers;
 
-import fr.rekeningrijdersapplicatie.pojos.Invoice;
+import fr.rekeningrijdersapplicatie.pojos.Payment;
 import fr.rekeningrijdersapplicatie.services.PaymentService;
+import java.util.Date;
 import java.util.Set;
 
 import javax.ejb.Stateless;
@@ -24,8 +25,8 @@ public class PaymentController {
     @Inject
     private PaymentService paymentService;
     
-    public Set<Invoice> getInvoices(String uuid){
-        return null;
+    public Set<Payment> getPayments(Date date){
+        return paymentService.getPayments(date);
     }
     
 }
