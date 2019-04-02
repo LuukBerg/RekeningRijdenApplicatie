@@ -17,7 +17,7 @@ public class PaymentDAOMockImpl implements IPaymentDAO {
         this.payments = new HashSet<Payment>();
         Payment unpaidPayment = new Payment();
         unpaidPayment.setId(1);
-        unpaidPayment.setInvoiceUuid("asdasdqweqwe");
+        unpaidPayment.setInvoiceUuid("asdasdqweqwee");
 
         Payment paidPayment = new Payment();
         paidPayment.setId(2);
