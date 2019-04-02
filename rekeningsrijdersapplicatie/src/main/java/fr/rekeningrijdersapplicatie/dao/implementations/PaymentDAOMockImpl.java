@@ -17,16 +17,15 @@ public class PaymentDAOMockImpl implements IPaymentDAO {
     
     public PaymentDAOMockImpl(){
         this.payments = new HashSet<Payment>();
+
         Payment unpaidPayment = new Payment();
         unpaidPayment.setId(1);
         unpaidPayment.setInvoiceUuid("asdasdqweqwe");
-        unpaidPayment.setPaymentStatus(PaymentStatus.UNPAID);
-        
+
         Payment paidPayment = new Payment();
         paidPayment.setId(2);
         paidPayment.setInvoiceUuid("iueyrewere");
-        paidPayment.setPaymentStatus(PaymentStatus.PAID);
-        
+
         payments.add(unpaidPayment);
         payments.add(paidPayment);
     }
