@@ -3,6 +3,7 @@ package fr.rekeningrijdersapplicatie.dao.implementations;
 import fr.rekeningrijdersapplicatie.dao.interfaces.IUserDAO;
 import fr.rekeningrijdersapplicatie.pojos.LoginInfo;
 import fr.rekeningrijdersapplicatie.pojos.RegistrationInfo;
+import fr.rekeningrijdersapplicatie.pojos.User;
 import fr.rekeningrijdersapplicatie.qualifiers.UserDAOMock;
 
 import javax.ejb.Stateless;
