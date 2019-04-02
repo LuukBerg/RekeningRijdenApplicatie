@@ -1,6 +1,6 @@
 package fr.rekeningrijdersapplicatie.pojos;
 
-public class VehicleOwner {
+public class VehicleOwner extends User {
     private UserInfo userInfo;
 
     public UserInfo getUserInfo() {
