@@ -4,6 +4,7 @@ import fr.rekeningrijdersapplicatie.apis.RekeningAdministratieAPIMock;
 import fr.rekeningrijdersapplicatie.dao.implementations.UserDAOMockImpl;
 import fr.rekeningrijdersapplicatie.pojos.LoginInfo;
 import fr.rekeningrijdersapplicatie.pojos.RegistrationInfo;
+import fr.rekeningrijdersapplicatie.pojos.User;
 import fr.rekeningrijdersapplicatie.services.UserService;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -33,6 +34,10 @@ public class UserServiceTest {
     public void register() {
         userService.register(registerInfo);
 
-        assertNotNull(userService.login(loginInfo));
+        User user = userService.login(loginInfo);
+
+        assertEquals(user.getEmail(), registerInfo.getEmail());
+        assertEquals(user.getUsername(), registerInfo.getUsername());
+        assertEquals(user.getId(), 0);
     }
 }
