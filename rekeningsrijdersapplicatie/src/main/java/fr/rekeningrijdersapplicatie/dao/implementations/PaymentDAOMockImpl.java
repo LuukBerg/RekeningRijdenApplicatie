@@ -19,7 +19,6 @@ public class PaymentDAOMockImpl implements IPaymentDAO {
         Payment unpaidPayment = new Payment();
         unpaidPayment.setId(1);
         unpaidPayment.setInvoiceUuid("asdasdqweqwe");
-        unpaidPayment.setPaymentStatus(PaymentStatus.UNPAID);
         
         Payment paidPayment = new Payment();
         paidPayment.setId(2);
