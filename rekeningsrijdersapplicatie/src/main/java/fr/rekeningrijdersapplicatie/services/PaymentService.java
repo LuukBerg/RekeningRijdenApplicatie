@@ -1,10 +1,7 @@
 package fr.rekeningrijdersapplicatie.services;
 
-import fr.rekeningrijdersapplicatie.apis.IRekeningAdministratieAPI;
 import fr.rekeningrijdersapplicatie.dao.interfaces.IInvoiceDAO;
-import fr.rekeningrijdersapplicatie.pojos.Invoice;
 import fr.rekeningrijdersapplicatie.pojos.Payment;
-import fr.rekeningrijdersapplicatie.pojos.User;
 import fr.rekeningrijdersapplicatie.qualifiers.InvoiceDAOMock;
 
 import javax.ejb.Stateless;
