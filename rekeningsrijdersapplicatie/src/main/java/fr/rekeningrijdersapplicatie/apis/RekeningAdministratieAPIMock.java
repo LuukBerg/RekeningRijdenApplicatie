@@ -14,6 +14,8 @@ import javax.ejb.Stateless;
 @Stateless
 @RekeningAdministratieMock
 public class RekeningAdministratieAPIMock implements IRekeningAdministratieAPI {
+    
+    private final Map<User
 
     @Override
     public String getUUID(User user) {
