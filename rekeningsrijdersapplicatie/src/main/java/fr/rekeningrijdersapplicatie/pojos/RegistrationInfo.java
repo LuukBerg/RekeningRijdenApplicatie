@@ -1,6 +1,7 @@
 package fr.rekeningrijdersapplicatie.pojos;
 
 public class RegistrationInfo {
+
     private String username;
     private String password;
     private String email;
@@ -28,4 +29,5 @@ public class RegistrationInfo {
     public void setEmail(String email) {
         this.email = email;
     }
+
 }
