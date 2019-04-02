@@ -13,6 +13,7 @@ import javax.ejb.Stateless;
 @Stateless
 @UserDAOMock
 public class UserDAOMockImpl implements IUserDAO {
+
     @Override
     public User register(RegistrationInfo registrationInfo) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
