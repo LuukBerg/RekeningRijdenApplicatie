@@ -1,7 +1,5 @@
 package fr.rekeningrijdersapplicatie.pojos;
 
-import fr.rekeningrijdersapplicatie.enumerations.PaymentStatus;
-
 public class Payment {
     private long id;
     private String invoiceUuid;
