@@ -1,20 +1,20 @@
 package fr.rekeningrijdersapplicatie.services;
 
-import fr.rekeningrijdersapplicatie.dao.interfaces.IInvoiceDAO;
 import fr.rekeningrijdersapplicatie.pojos.Payment;
-import fr.rekeningrijdersapplicatie.qualifiers.InvoiceDAOMock;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import java.util.Date;
 import java.util.Set;
+import fr.rekeningrijdersapplicatie.dao.interfaces.IPaymentDAO;
+import fr.rekeningrijdersapplicatie.qualifiers.PaymentDAOMock;
 
 @Stateless
 public class PaymentService {
 
     @Inject
-    @InvoiceDAOMock
-    private IInvoiceDAO invoiceDao;
+    @PaymentDAOMock
+    private IPaymentDAO invoiceDao;
 
     //verkrijg alle payments van iedere user.
     public Set<Payment> getPayments(Date date) {

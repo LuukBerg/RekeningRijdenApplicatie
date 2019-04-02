@@ -5,7 +5,6 @@ import fr.rekeningrijdersapplicatie.enumerations.PaymentStatus;
 public class Payment {
     private long id;
     private String invoiceUuid;
-    private PaymentStatus paymentStatus;
 
     public long getId() {
         return id;
@@ -22,12 +21,5 @@ public class Payment {
     public void setInvoiceUuid(String invoiceUuid) {
         this.invoiceUuid = invoiceUuid;
     }
-
-    public PaymentStatus getPaymentStatus() {
-        return paymentStatus;
-    }
-
-    public void setPaymentStatus(PaymentStatus paymentStatus) {
-        this.paymentStatus = paymentStatus;
-    }
+    
 }

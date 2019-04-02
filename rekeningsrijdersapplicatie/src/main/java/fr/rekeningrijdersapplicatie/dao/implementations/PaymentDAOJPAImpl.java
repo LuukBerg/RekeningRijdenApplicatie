@@ -1,23 +1,24 @@
 package fr.rekeningrijdersapplicatie.dao.implementations;
 
-import fr.rekeningrijdersapplicatie.dao.interfaces.IInvoiceDAO;
 import fr.rekeningrijdersapplicatie.pojos.Invoice;
-import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
+import fr.rekeningrijdersapplicatie.dao.interfaces.IPaymentDAO;
+import fr.rekeningrijdersapplicatie.pojos.Payment;
+import java.util.Set;
 
 @Stateless
 @Default
-public class InvoiceDAOJPAImpl implements IInvoiceDAO {
+public class PaymentDAOJPAImpl implements IPaymentDAO {
 
     @Override
-    public List<Invoice> getPayments() {
+    public Set<Payment> getPayments() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void submitPayment() {
+    public void submitPayment(Payment payment) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
