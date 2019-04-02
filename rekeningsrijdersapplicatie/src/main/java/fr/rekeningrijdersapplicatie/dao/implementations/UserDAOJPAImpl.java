@@ -4,6 +4,8 @@ import fr.rekeningrijdersapplicatie.dao.interfaces.IUserDAO;
 import fr.rekeningrijdersapplicatie.pojos.LoginInfo;
 import fr.rekeningrijdersapplicatie.pojos.RegistrationInfo;
 import fr.rekeningrijdersapplicatie.pojos.User;
+import fr.rekeningrijdersapplicatie.pojos.Vehicle;
+import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
@@ -17,6 +19,11 @@ public class UserDAOJPAImpl implements IUserDAO {
     }
 
     public User login(LoginInfo loginInfo) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Vehicle> getVehicles() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
