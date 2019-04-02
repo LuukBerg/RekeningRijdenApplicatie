@@ -23,8 +23,8 @@ public class PaymentService {
     public Set<Payment> getPayments() {
         return paymentDao.getPayments();
     }
-
-    public void submitPayment(Payment payment) {
+    
+    public void submitPayment(Payment payment){
         paymentDao.submitPayment(payment);
     }
 }

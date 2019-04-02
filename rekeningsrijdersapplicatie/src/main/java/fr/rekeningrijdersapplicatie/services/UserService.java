@@ -38,7 +38,9 @@ public class UserService {
     }
     
     public Set<Invoice> getInvoices(User user){
-        return rekeningAdministratieAPI.getInvoices(user);
+        Set<Invoice> invoices = rekeningAdministratieAPI.getInvoices(user);
+        //TODO - Check payment statusses.
+        return invoices;
     }
     
 }

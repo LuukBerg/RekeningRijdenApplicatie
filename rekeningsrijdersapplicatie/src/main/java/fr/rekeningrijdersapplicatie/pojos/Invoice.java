@@ -13,7 +13,6 @@ public class Invoice {
     private double totalAmount;
     private Month month;
     private Set<Movement> movements;
-    private PaymentStatus paymentStatus;
 
     public long getId() {
         return id;
@@ -72,14 +71,6 @@ public class Invoice {
 
     public void setUserUuid(String userUuid) {
         this.userUuid = userUuid;
-    }
-
-    public PaymentStatus getPaymentStatus() {
-        return paymentStatus;
-    }
-
-    public void setPaymentStatus(PaymentStatus paymentStatus) {
-        this.paymentStatus = paymentStatus;
     }
 
 }

@@ -9,6 +9,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 /**
@@ -18,8 +19,9 @@ import javax.ws.rs.core.MediaType;
 
 //API voor rekeningadministratie
 @Stateless
-@Path("/invoice")
+@Path("/payments")
 @Consumes(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public class PaymentController {
 
     @Inject
