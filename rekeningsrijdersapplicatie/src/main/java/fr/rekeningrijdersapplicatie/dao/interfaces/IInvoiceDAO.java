@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface IInvoiceDAO {
     List<Invoice> getPayments();
+    
+    void submitPayment();
 }

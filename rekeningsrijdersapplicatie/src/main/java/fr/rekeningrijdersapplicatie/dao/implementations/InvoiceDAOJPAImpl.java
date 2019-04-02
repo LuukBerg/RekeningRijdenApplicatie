@@ -15,4 +15,9 @@ public class InvoiceDAOJPAImpl implements IInvoiceDAO {
     public List<Invoice> getPayments() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public void submitPayment() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
