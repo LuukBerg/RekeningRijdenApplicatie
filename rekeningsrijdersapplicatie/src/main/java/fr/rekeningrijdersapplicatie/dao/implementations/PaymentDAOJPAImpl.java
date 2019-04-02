@@ -1,7 +1,5 @@
 package fr.rekeningrijdersapplicatie.dao.implementations;
 
-import fr.rekeningrijdersapplicatie.pojos.Invoice;
-
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import fr.rekeningrijdersapplicatie.dao.interfaces.IPaymentDAO;
