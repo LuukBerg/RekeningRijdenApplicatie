@@ -2,29 +2,28 @@ package test;
 
 import fr.rekeningrijdersapplicatie.dao.implementations.PaymentDAOMockImpl;
 import fr.rekeningrijdersapplicatie.pojos.Payment;
+import fr.rekeningrijdersapplicatie.services.PaymentService;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import java.util.Iterator;
-import java.util.Set;
 
-public class PaymentDAOMockImplTest {
+public class PaymentServiceTest {
 
-    private PaymentDAOMockImpl paymentDAO;
+    private PaymentService paymentService;
 
     @Before
     public void setUp(){
-        paymentDAO = new PaymentDAOMockImpl();
+        paymentService = new PaymentService(new PaymentDAOMockImpl());
     }
 
     @Test
     public void getPayments() {
-        Assert.assertNotNull(paymentDAO.getPayments());
-        Assert.assertEquals(paymentDAO.getPayments().size(), 2);
+        Assert.assertNotNull(paymentService.getPayments());
+        Assert.assertEquals(2, paymentService.getPayments().size());
 
-        Iterator<Payment> iterator = paymentDAO.getPayments().iterator();
+        Iterator<Payment> iterator = paymentService.getPayments().iterator();
 
         Payment payment1 = iterator.next();
 
@@ -41,10 +40,10 @@ public class PaymentDAOMockImplTest {
         payment.setId(3);
         payment.setInvoiceUuid("qwdlwijfm");
 
-        Assert.assertEquals(paymentDAO.getPayments().size(), 2);
+        Assert.assertEquals(2, paymentService.getPayments().size());
 
-        paymentDAO.submitPayment(payment);
+        paymentService.submitPayment(payment);
 
-        Assert.assertEquals(paymentDAO.getPayments().size(), 3);
+        Assert.assertEquals(3, paymentService.getPayments().size());
     }
 }

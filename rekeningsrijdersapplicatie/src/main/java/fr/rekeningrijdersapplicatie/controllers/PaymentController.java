@@ -26,7 +26,7 @@ public class PaymentController {
     private PaymentService paymentService;
     
     public Set<Payment> getPayments(Date date){
-        return paymentService.getPayments(date);
+        return paymentService.getPayments();
     }
     
 }

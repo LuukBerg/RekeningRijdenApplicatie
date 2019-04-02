@@ -4,7 +4,6 @@ import fr.rekeningrijdersapplicatie.pojos.Payment;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import java.util.Date;
 import java.util.Set;
 import fr.rekeningrijdersapplicatie.dao.interfaces.IPaymentDAO;
 import fr.rekeningrijdersapplicatie.qualifiers.PaymentDAOMock;
@@ -14,14 +13,18 @@ public class PaymentService {
 
     @Inject
     @PaymentDAOMock
-    private IPaymentDAO invoiceDao;
+    private IPaymentDAO paymentDao;
+    
+    public PaymentService(IPaymentDAO paymentDao){
+        this.paymentDao = paymentDao;
+    }
 
     //verkrijg alle payments van iedere user.
-    public Set<Payment> getPayments(Date date) {
-        return null;
+    public Set<Payment> getPayments() {
+        return paymentDao.getPayments();
     }
 
     public void submitPayment(Payment payment) {
-
+        paymentDao.submitPayment(payment);
     }
 }
