@@ -7,21 +7,21 @@ package fr.rekeningrijdersapplicatie.apis;
 
 import fr.rekeningrijdersapplicatie.pojos.Invoice;
 import fr.rekeningrijdersapplicatie.pojos.User;
+import fr.rekeningrijdersapplicatie.qualifiers.RekeningAdministratieMock;
 import java.util.Set;
 import javax.ejb.Stateless;
-import javax.enterprise.inject.Default;
 
 @Stateless
-@Default
-public class RekeningAdministratieAPI implements IRekeningAdministratieAPI {
+@RekeningAdministratieMock
+public class RekeningAdministratieAPIMock implements IRekeningAdministratieAPI {
 
     @Override
-    public Set<Invoice> getInvoices(User user) {
+    public String getUUID(User user) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public String getUUID(User user) {
+    public Set<Invoice> getInvoices(User user) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

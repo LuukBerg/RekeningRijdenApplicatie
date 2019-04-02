@@ -6,6 +6,7 @@ import fr.rekeningrijdersapplicatie.pojos.Invoice;
 import fr.rekeningrijdersapplicatie.pojos.LoginInfo;
 import fr.rekeningrijdersapplicatie.pojos.RegistrationInfo;
 import fr.rekeningrijdersapplicatie.pojos.User;
+import fr.rekeningrijdersapplicatie.qualifiers.RekeningAdministratieMock;
 import fr.rekeningrijdersapplicatie.qualifiers.UserDAOMock;
 import java.util.Set;
 
@@ -20,6 +21,7 @@ public class UserService {
     private IUserDAO userDao;
 
     @Inject
+    @RekeningAdministratieMock
     private IRekeningAdministratieAPI rekeningAdministratieAPI;
 
     public User register(RegistrationInfo registrationInfo){
