@@ -1,7 +1,10 @@
 package fr.rekeningrijdersapplicatie.services;
 
+import fr.rekeningrijdersapplicatie.apis.IRekeningAdministratieAPI;
 import fr.rekeningrijdersapplicatie.dao.interfaces.IInvoiceDAO;
+import fr.rekeningrijdersapplicatie.pojos.Invoice;
 import fr.rekeningrijdersapplicatie.pojos.Payment;
+import fr.rekeningrijdersapplicatie.pojos.User;
 import fr.rekeningrijdersapplicatie.qualifiers.InvoiceDAOMock;
 
 import javax.ejb.Stateless;
@@ -16,11 +19,12 @@ public class InvoiceService {
     @InvoiceDAOMock
     private IInvoiceDAO invoiceDao;
 
-    public Set<Payment> getPayments(Date date){
+    //verkrijg alle payments van iedere user.
+    public Set<Payment> getPayments(Date date) {
         return null;
     }
 
-    public void submitPayment(Payment payment){
+    public void submitPayment(Payment payment) {
 
     }
 }

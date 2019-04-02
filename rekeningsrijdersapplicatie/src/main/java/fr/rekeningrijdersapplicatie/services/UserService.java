@@ -1,10 +1,13 @@
 package fr.rekeningrijdersapplicatie.services;
 
+import fr.rekeningrijdersapplicatie.apis.IRekeningAdministratieAPI;
 import fr.rekeningrijdersapplicatie.dao.interfaces.IUserDAO;
+import fr.rekeningrijdersapplicatie.pojos.Invoice;
 import fr.rekeningrijdersapplicatie.pojos.LoginInfo;
 import fr.rekeningrijdersapplicatie.pojos.RegistrationInfo;
 import fr.rekeningrijdersapplicatie.pojos.User;
 import fr.rekeningrijdersapplicatie.qualifiers.UserDAOMock;
+import java.util.Set;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -16,6 +19,9 @@ public class UserService {
     @UserDAOMock
     private IUserDAO userDao;
 
+    @Inject
+    private IRekeningAdministratieAPI rekeningAdministratieAPI;
+
     public User register(RegistrationInfo registrationInfo){
         return userDao.register(registrationInfo);
     }
@@ -23,4 +29,9 @@ public class UserService {
     public User login(LoginInfo loginInfo){
         return userDao.login(loginInfo);
     }
+    
+    public Set<Invoice> getInvoices(User user){
+        return rekeningAdministratieAPI.getInvoices(user);
+    }
+    
 }

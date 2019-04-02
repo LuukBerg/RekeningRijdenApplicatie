@@ -29,5 +29,4 @@ public class UserController {
     public void login(LoginInfo loginInfo) {
         userService.login(loginInfo);
     }
-
 }
