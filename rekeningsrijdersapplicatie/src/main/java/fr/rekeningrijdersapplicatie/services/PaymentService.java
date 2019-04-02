@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.Set;
 
 @Stateless
-public class InvoiceService {
+public class PaymentService {
 
     @Inject
     @InvoiceDAOMock

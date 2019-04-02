@@ -1,7 +1,7 @@
 package fr.rekeningrijdersapplicatie.controllers;
 
 import fr.rekeningrijdersapplicatie.pojos.Invoice;
-import fr.rekeningrijdersapplicatie.services.InvoiceService;
+import fr.rekeningrijdersapplicatie.services.PaymentService;
 import java.util.Set;
 
 import javax.ejb.Stateless;
@@ -19,12 +19,13 @@ import javax.ws.rs.core.MediaType;
 @Stateless
 @Path("/invoice")
 @Consumes(MediaType.APPLICATION_JSON)
-public class InvoiceController {
+public class PaymentController {
 
     @Inject
-    private InvoiceService invoiceService;
+    private PaymentService paymentService;
     
     public Set<Invoice> getInvoices(String uuid){
         return null;
     }
+    
 }

@@ -1,8 +1,11 @@
 package fr.rekeningrijdersapplicatie.controllers;
 
+import fr.rekeningrijdersapplicatie.pojos.Invoice;
 import fr.rekeningrijdersapplicatie.pojos.LoginInfo;
 import fr.rekeningrijdersapplicatie.pojos.RegistrationInfo;
+import fr.rekeningrijdersapplicatie.pojos.User;
 import fr.rekeningrijdersapplicatie.services.UserService;
+import java.util.Set;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
@@ -15,6 +18,7 @@ import javax.ws.rs.core.MediaType;
 @Path("/user")
 @Consumes(MediaType.APPLICATION_JSON)
 public class UserController {
+
     @Inject
     private UserService userService;
 
@@ -29,4 +33,11 @@ public class UserController {
     public void login(LoginInfo loginInfo) {
         userService.login(loginInfo);
     }
+
+    @POST
+    @Path("/invoices")
+    public Set<Invoice> getInvoices(User user) {
+        return userService.getInvoices(user);
+    }
+
 }
