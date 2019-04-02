@@ -31,9 +31,9 @@ public class RekeningAdministratieAPIMock implements IRekeningAdministratieAPI {
         Set<Invoice> invoices = new HashSet<Invoice>();
         Invoice invoice = new Invoice();
         invoice.setId(5);
-        invoice.setUuid("3rytrfdgdf");
+        invoice.setUserUuid("3rytrfdgdf");
         invoices.add(invoice);
-        this.invoiceMap.put(invoice.getUuid(), invoices);
+        this.invoiceMap.put(invoice.getUserUuid(), invoices);
     }
 
     @Override

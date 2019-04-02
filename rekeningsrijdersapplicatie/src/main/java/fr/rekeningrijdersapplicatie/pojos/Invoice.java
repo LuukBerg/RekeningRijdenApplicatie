@@ -7,6 +7,7 @@ public class Invoice {
 
     private long id;
     private String uuid;
+    private String userUuid;
     private Vehicle vehicle;
     private double totalAmount;
     private Month month;
@@ -61,6 +62,14 @@ public class Invoice {
 
     public void addMovement(Movement movement){
         movements.add(movement);
+    }
+
+    public String getUserUuid() {
+        return userUuid;
+    }
+
+    public void setUserUuid(String userUuid) {
+        this.userUuid = userUuid;
     }
 
 }
