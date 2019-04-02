@@ -5,7 +5,16 @@
  */
 package fr.rekeningrijdersapplicatie.apis;
 
+import fr.rekeningrijdersapplicatie.pojos.Invoice;
+import fr.rekeningrijdersapplicatie.pojos.User;
+import java.util.Set;
+
 
 public class RekeningAdministratieAPI implements IRekeningAdministratieAPI {
+
+    @Override
+    public Set<Invoice> getInvoices(User user) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

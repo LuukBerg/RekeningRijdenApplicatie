@@ -5,10 +5,15 @@
  */
 package fr.rekeningrijdersapplicatie.apis;
 
+import fr.rekeningrijdersapplicatie.pojos.Invoice;
+import fr.rekeningrijdersapplicatie.pojos.User;
+import java.util.Set;
+
 /**
  *
  * @author Ken
  */
 public interface IRekeningAdministratieAPI {
     
+    Set<Invoice> getInvoices(User user);
 }

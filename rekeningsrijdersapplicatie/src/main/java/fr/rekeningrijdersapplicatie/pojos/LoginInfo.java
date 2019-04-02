@@ -1,6 +1,7 @@
 package fr.rekeningrijdersapplicatie.pojos;
 
 public class LoginInfo {
+
     private String username;
     private String password;
 
