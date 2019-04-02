@@ -1,6 +1,6 @@
 package fr.rekeningrijdersapplicatie.pojos;
 
-public class RegistrationInfo {
+public class RegistrationInfo extends UserInfo {
 
     private String username;
     private String password;
