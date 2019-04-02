@@ -23,6 +23,11 @@ public class UserService {
     @Inject
     @RekeningAdministratieMock
     private IRekeningAdministratieAPI rekeningAdministratieAPI;
+    
+    public UserService(IUserDAO userDao, IRekeningAdministratieAPI rekeningAdministratieAPI){
+        this.userDao = userDao;
+        this.rekeningAdministratieAPI = rekeningAdministratieAPI;
+    }
 
     public User register(RegistrationInfo registrationInfo){
         return userDao.register(registrationInfo);
