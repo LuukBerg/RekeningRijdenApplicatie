@@ -15,5 +15,7 @@ import java.util.Set;
  */
 public interface IRekeningAdministratieAPI {
     
+    String getUUID(User user);
+    
     Set<Invoice> getInvoices(User user);
 }
