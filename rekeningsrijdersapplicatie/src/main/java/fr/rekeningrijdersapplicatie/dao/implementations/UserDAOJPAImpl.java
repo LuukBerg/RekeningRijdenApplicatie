@@ -19,6 +19,9 @@ public class UserDAOJPAImpl implements IUserDAO {
         this.entityManager = entityManager;
     }
 
+    public UserDAOJPAImpl() {
+    }
+
     @Override
     public void register(RegistrationInfo registrationInfo) {
         

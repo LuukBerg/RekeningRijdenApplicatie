@@ -13,6 +13,7 @@ public class RegistrationInfo implements Serializable {
     private String username;
     private String password;
     private String email;
+    private String BSN;
 
     public String getUsername() {
         return username;
@@ -38,4 +39,11 @@ public class RegistrationInfo implements Serializable {
         this.email = email;
     }
 
+    public String getBSN() {
+        return BSN;
+    }
+
+    public void setBSN(String BSN) {
+        this.BSN = BSN;
+    }
 }
