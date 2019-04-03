@@ -5,6 +5,7 @@ public class RegistrationInfo extends UserInfo {
     private String username;
     private String password;
     private String email;
+    private String BSN;
 
     public String getUsername() {
         return username;
@@ -30,4 +31,11 @@ public class RegistrationInfo extends UserInfo {
         this.email = email;
     }
 
+    public String getBSN() {
+        return BSN;
+    }
+
+    public void setBSN(String BSN) {
+        this.BSN = BSN;
+    }
 }

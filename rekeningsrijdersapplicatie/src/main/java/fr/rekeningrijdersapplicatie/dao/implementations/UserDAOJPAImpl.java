@@ -19,6 +19,9 @@ public class UserDAOJPAImpl implements IUserDAO {
         this.entityManager = entityManager;
     }
 
+    public UserDAOJPAImpl() {
+    }
+
     @Override
     public User register(RegistrationInfo registrationInfo) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
