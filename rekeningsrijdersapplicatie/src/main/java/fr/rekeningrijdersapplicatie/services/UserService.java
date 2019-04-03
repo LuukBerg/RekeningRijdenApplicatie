@@ -36,7 +36,7 @@ public class UserService {
         if(user == null)
             return; //throw exception
         
-        UserInfo userInfo = rekeningAdministratieAPI.getUserInfo(user.getBSN());
+        UserInfo userInfo = rekeningAdministratieAPI.getUserInfo(user.getBsn());
         if(userInfo == null)
             return; //throw exception
         
