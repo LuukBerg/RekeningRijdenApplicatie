@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
 @Default
 public class UserDAOJPAImpl implements IUserDAO {
     
-    @PersistenceContext(unitName ="RekAppPUTest")
+    @PersistenceContext(unitName ="RekAppPU")
     private EntityManager entityManager;
     
     public UserDAOJPAImpl(EntityManager entityManager){

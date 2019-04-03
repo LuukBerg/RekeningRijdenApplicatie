@@ -5,20 +5,13 @@
  */
 package fr.rekeningrijdersapplicatie.dao.implementations;
 
-import fr.rekeningrijdersapplicatie.pojos.LoginInfo;
 import fr.rekeningrijdersapplicatie.pojos.RegistrationInfo;
-import fr.rekeningrijdersapplicatie.pojos.User;
-import fr.rekeningrijdersapplicatie.pojos.Vehicle;
-import java.util.Set;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -32,7 +25,7 @@ public class UserDAOJPAImplTest {
 
     @BeforeClass
     public static void setUp() {
-        UserDAOJPAImplTest.entityManagerFactory = Persistence.createEntityManagerFactory("KwetterPUTest");
+        UserDAOJPAImplTest.entityManagerFactory = Persistence.createEntityManagerFactory("RekAppPUTest");
         UserDAOJPAImplTest.entityManager = entityManagerFactory.createEntityManager();
         UserDAOJPAImplTest.userDao = new UserDAOJPAImpl(entityManager);
     }
