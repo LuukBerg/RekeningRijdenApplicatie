@@ -2,14 +2,13 @@ package fr.rekeningrijdersapplicatie.dao.interfaces;
 
 import fr.rekeningrijdersapplicatie.pojos.*;
 
-import java.util.Set;
+public interface IUserDAO {
 
-public interface  IUserDAO {
-    void register(RegistrationInfo registrationInfo);
+    User register(RegistrationInfo registrationInfo);
 
     User login(LoginInfo loginInfo);
-
-    Set<Vehicle> getVehicles();
     
+    void updateUser(User user);
+
     User findByID(long id);
 }

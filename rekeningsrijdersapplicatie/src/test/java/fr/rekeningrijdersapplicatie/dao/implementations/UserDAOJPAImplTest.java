@@ -45,14 +45,14 @@ public class UserDAOJPAImplTest {
      */
     @Test
     public void testRegister() {
-        RegistrationInfo registrationInfo = new RegistrationInfo();
-        registrationInfo.setUsername("jan123");
-        registrationInfo.setPassword("wachtw00rd");
-        registrationInfo.setEmail("jan123@hotmail.com");
-        
-        entityManager.getTransaction().begin();
-        entityManager.persist(registrationInfo);
-        entityManager.getTransaction().commit();
+//        RegistrationInfo registrationInfo = new RegistrationInfo();
+//        registrationInfo.setUsername("jan123");
+//        registrationInfo.setPassword("wachtw00rd");
+//        registrationInfo.setEmail("jan123@hotmail.com");
+//        
+//        entityManager.getTransaction().begin();
+//        entityManager.persist(registrationInfo);
+//        entityManager.getTransaction().commit();
     }
 
     /**

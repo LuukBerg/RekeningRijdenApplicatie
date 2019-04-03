@@ -39,7 +39,9 @@ public class RekeningAdministratieAPIMock implements IRekeningAdministratieAPI {
 
     @Override
     public UserInfo getUserInfo(String bsn) {
-        return null;
+        UserInfo userInfo = new UserInfo();
+        userInfo.setUuid("test uuid");
+        return userInfo;
     }
 
     @Override

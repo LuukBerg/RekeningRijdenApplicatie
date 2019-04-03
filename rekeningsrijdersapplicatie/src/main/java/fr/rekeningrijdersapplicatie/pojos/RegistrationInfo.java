@@ -9,26 +9,30 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-@Entity(name="registration_info")
-@Table(name="rekapp_user")
+@Entity(name = "registration_info")
+@Table(name = "rekapp_user")
 public class RegistrationInfo implements Serializable {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    
-    @Column(nullable = false)
+    @Column(unique = true, nullable = false)
     private String username;
-    
     @Column(nullable = false)
     private String password;
-    
-    @Column(nullable = false)
+    @Column(unique = true, nullable = false)
     private String email;
-    
     @Transient
-    private String BSN;
+    private String bsn;
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+    
     public String getUsername() {
         return username;
     }
@@ -53,11 +57,12 @@ public class RegistrationInfo implements Serializable {
         this.email = email;
     }
 
-    public String getBSN() {
-        return BSN;
+    public String getBsn() {
+        return bsn;
     }
 
-    public void setBSN(String BSN) {
-        this.BSN = BSN;
+    public void setBsn(String bsn) {
+        this.bsn = bsn;
     }
+
 }

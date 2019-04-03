@@ -7,9 +7,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
-@Entity(name="user")
-@Table(name="rekapp_user")
+@Entity(name = "rekapp_user")
 public class User implements Serializable {
 
     @Id
@@ -24,6 +24,12 @@ public class User implements Serializable {
     
     @Column(nullable = false, unique = true)
     private String email;
+    
+    @Transient
+    private String BSN;
+    
+    @Column(nullable = false, columnDefinition = "bit default 0")
+    private boolean enabled;
 
     public long getId() {
         return id;
@@ -55,6 +61,22 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getBSN() {
+        return BSN;
+    }
+
+    public void setBSN(String BSN) {
+        this.BSN = BSN;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
     @Override
