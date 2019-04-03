@@ -6,7 +6,7 @@
     <properties>
       <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/rekapp" />
       <property name="hibernate.connection.username" value="root" />
-      <!--property name="hibernate.connection.password" value="admin" /-->
+      <property name="hibernate.connection.password" value="root" />
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
       <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>

@@ -6,9 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Transient;
 
-@Entity(name="user")
+@Entity(name="registration_info")
+@Table(name="rekapp_user")
 public class RegistrationInfo implements Serializable {
     
     @Id
