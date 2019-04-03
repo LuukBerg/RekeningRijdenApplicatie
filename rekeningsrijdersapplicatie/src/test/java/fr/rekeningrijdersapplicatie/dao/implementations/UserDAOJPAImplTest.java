@@ -9,6 +9,8 @@ package fr.rekeningrijdersapplicatie.dao.implementations;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+
+import fr.rekeningrijdersapplicatie.pojos.RegistrationInfo;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -45,14 +47,14 @@ public class UserDAOJPAImplTest {
      */
     @Test
     public void testRegister() {
-//        RegistrationInfo registrationInfo = new RegistrationInfo();
-//        registrationInfo.setUsername("jan123");
-//        registrationInfo.setPassword("wachtw00rd");
-//        registrationInfo.setEmail("jan123@hotmail.com");
-//        
-//        entityManager.getTransaction().begin();
-//        entityManager.persist(registrationInfo);
-//        entityManager.getTransaction().commit();
+        RegistrationInfo registrationInfo = new RegistrationInfo();
+        registrationInfo.setUsername("jan1234");
+        registrationInfo.setPassword("wachtw00rd");
+        registrationInfo.setEmail("jan123@hotmail.com");
+
+        entityManager.getTransaction().begin();
+        entityManager.persist(registrationInfo);
+        entityManager.getTransaction().commit();
     }
 
     /**
