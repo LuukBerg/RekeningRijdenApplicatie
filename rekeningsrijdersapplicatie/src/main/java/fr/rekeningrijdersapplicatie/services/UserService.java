@@ -1,12 +1,15 @@
 package fr.rekeningrijdersapplicatie.services;
 
 import fr.rekeningrijdersapplicatie.apis.IRekeningAdministratieAPI;
+import fr.rekeningrijdersapplicatie.dao.interfaces.IPaymentDAO;
 import fr.rekeningrijdersapplicatie.dao.interfaces.IUserDAO;
 import fr.rekeningrijdersapplicatie.pojos.Invoice;
 import fr.rekeningrijdersapplicatie.pojos.LoginInfo;
+import fr.rekeningrijdersapplicatie.pojos.Payment;
 import fr.rekeningrijdersapplicatie.pojos.RegistrationInfo;
 import fr.rekeningrijdersapplicatie.pojos.User;
 import fr.rekeningrijdersapplicatie.pojos.UserInfo;
+import fr.rekeningrijdersapplicatie.qualifiers.PaymentDAOMock;
 import fr.rekeningrijdersapplicatie.qualifiers.RekeningAdministratieMock;
 import fr.rekeningrijdersapplicatie.qualifiers.UserDAOMock;
 import java.util.Set;
@@ -20,6 +23,10 @@ public class UserService {
     @Inject
     @UserDAOMock
     private IUserDAO userDao;
+    
+    @Inject
+    @PaymentDAOMock
+    private IPaymentDAO paymentDao;
 
     @Inject
     @RekeningAdministratieMock
@@ -55,7 +62,8 @@ public class UserService {
     
     public Set<Invoice> getInvoices(User user){
         Set<Invoice> invoices = rekeningAdministratieAPI.getInvoices(user);
-        //TODO - Check payment statusses.
+        Set<Payment> payments = paymentDao.getPayments(user);
+        //TODO - Check only payments of last 24 hours against invoices of last 24 hours.
         return invoices;
     }
     

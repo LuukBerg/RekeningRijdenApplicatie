@@ -8,6 +8,7 @@ import fr.rekeningrijdersapplicatie.dao.interfaces.IPaymentDAO;
 import fr.rekeningrijdersapplicatie.enumerations.PaymentStatus;
 import fr.rekeningrijdersapplicatie.pojos.User;
 import fr.rekeningrijdersapplicatie.qualifiers.PaymentDAOMock;
+import java.util.Date;
 
 @Stateless
 @PaymentDAOMock
@@ -33,7 +34,7 @@ public class PaymentDAOMockImpl implements IPaymentDAO {
     }
 
     @Override
-    public Set<Payment> getPayments() {
+    public Set<Payment> getPayments(Date date) {
         return this.payments;
     }
     

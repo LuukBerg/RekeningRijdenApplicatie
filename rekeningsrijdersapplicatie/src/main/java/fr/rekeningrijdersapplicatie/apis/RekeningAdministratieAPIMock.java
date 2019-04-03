@@ -8,6 +8,7 @@ package fr.rekeningrijdersapplicatie.apis;
 import fr.rekeningrijdersapplicatie.pojos.Invoice;
 import fr.rekeningrijdersapplicatie.pojos.User;
 import fr.rekeningrijdersapplicatie.pojos.UserInfo;
+import fr.rekeningrijdersapplicatie.pojos.Vehicle;
 import fr.rekeningrijdersapplicatie.qualifiers.RekeningAdministratieMock;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -47,6 +48,11 @@ public class RekeningAdministratieAPIMock implements IRekeningAdministratieAPI {
     @Override
     public Set<Invoice> getInvoices(User user) {
         return invoiceMap.get(user.getUuid());
+    }
+
+    @Override
+    public Set<Vehicle> getVehicles(User arg0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

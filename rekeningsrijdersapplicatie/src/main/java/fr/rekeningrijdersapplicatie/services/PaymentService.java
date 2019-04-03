@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import java.util.Set;
 import fr.rekeningrijdersapplicatie.dao.interfaces.IPaymentDAO;
 import fr.rekeningrijdersapplicatie.qualifiers.PaymentDAOMock;
+import java.util.Date;
 
 @Stateless
 public class PaymentService {
@@ -21,7 +22,7 @@ public class PaymentService {
 
     //verkrijg alle payments van iedere user.
     public Set<Payment> getPayments() {
-        return paymentDao.getPayments();
+        return paymentDao.getPayments(new Date());
     }
     
     public void submitPayment(Payment payment){

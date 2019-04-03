@@ -5,6 +5,7 @@ import javax.enterprise.inject.Default;
 import fr.rekeningrijdersapplicatie.dao.interfaces.IPaymentDAO;
 import fr.rekeningrijdersapplicatie.pojos.Payment;
 import fr.rekeningrijdersapplicatie.pojos.User;
+import java.util.Date;
 import java.util.Set;
 
 @Stateless
@@ -12,7 +13,7 @@ import java.util.Set;
 public class PaymentDAOJPAImpl implements IPaymentDAO {
 
     @Override
-    public Set<Payment> getPayments() {
+    public Set<Payment> getPayments(Date date) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
