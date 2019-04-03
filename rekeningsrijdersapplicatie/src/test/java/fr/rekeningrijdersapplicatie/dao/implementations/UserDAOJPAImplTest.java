@@ -5,7 +5,7 @@
  */
 package fr.rekeningrijdersapplicatie.dao.implementations;
 
-import fr.rekeningrijdersapplicatie.pojos.RegistrationInfo;
+//import fr.rekeningrijdersapplicatie.pojos.RegistrationInfo;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;

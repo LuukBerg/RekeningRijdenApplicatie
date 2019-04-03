@@ -55,7 +55,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void register() {
+    public void jpaRegister() {
         jpaUserService.register(registerInfo);
 
         User user = jpaUserService.login(loginInfo);
