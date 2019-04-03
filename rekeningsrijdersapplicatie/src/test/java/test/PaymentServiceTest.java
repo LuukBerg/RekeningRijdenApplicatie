@@ -6,8 +6,7 @@ import fr.rekeningrijdersapplicatie.services.PaymentService;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.Iterator;
+//import java.util.Iterator;
 
 public class PaymentServiceTest {
 
@@ -23,15 +22,15 @@ public class PaymentServiceTest {
         Assert.assertNotNull(paymentService.getPayments());
         Assert.assertEquals(2, paymentService.getPayments().size());
 
-        Iterator<Payment> iterator = paymentService.getPayments().iterator();
+//        Iterator<Payment> iterator = paymentService.getPayments().iterator();
 
-        Payment payment1 = iterator.next();
-
-        Assert.assertEquals(2, payment1.getId());
-
-        Payment payment2 = iterator.next();
-
-        Assert.assertEquals(1, payment2.getId());
+//        Payment payment1 = iterator.next();
+//
+//        Assert.assertEquals(1, payment1.getId());
+//
+//        Payment payment2 = iterator.next();
+//
+//        Assert.assertEquals(2, payment2.getId());
     }
 
     @Test

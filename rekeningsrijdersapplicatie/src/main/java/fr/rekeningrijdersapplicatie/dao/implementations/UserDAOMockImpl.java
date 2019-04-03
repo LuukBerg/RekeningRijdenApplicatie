@@ -3,17 +3,18 @@ package fr.rekeningrijdersapplicatie.dao.implementations;
 import fr.rekeningrijdersapplicatie.dao.interfaces.IUserDAO;
 import fr.rekeningrijdersapplicatie.pojos.*;
 import fr.rekeningrijdersapplicatie.qualifiers.UserDAOMock;
-
 import javax.ejb.Stateless;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Stateless
 @UserDAOMock
 public class UserDAOMockImpl implements IUserDAO {
 
-    private List<User> users = new ArrayList<User>();
-    private int index = 0;
+    private final List<User> users = new ArrayList<User>();
+    
+    private static int index = 0;
 
     @Override
     public User register(RegistrationInfo registrationInfo) {
@@ -38,7 +39,7 @@ public class UserDAOMockImpl implements IUserDAO {
     }
 
     @Override
-    public List<Vehicle> getVehicles() {
+    public Set<Vehicle> getVehicles() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -48,7 +49,12 @@ public class UserDAOMockImpl implements IUserDAO {
     }
 
     @Override
-    public UserInfo editUserInfo() {
+    public void updateUserInfo(UserInfo userInfo) {
+        
+    }
+    
+    @Override
+    public User findByID(int id){
         return null;
     }
 }
