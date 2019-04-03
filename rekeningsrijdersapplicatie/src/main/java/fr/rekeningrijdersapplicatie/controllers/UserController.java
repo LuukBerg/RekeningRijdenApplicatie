@@ -35,6 +35,12 @@ public class UserController {
     public void login(LoginInfo loginInfo) {
         userService.login(loginInfo);
     }
+    
+    @POST
+    @Path("/update")
+    public void updateUser(User user){
+        userService.updateUser(user);
+    }
 
     @POST
     @Path("/invoices")
