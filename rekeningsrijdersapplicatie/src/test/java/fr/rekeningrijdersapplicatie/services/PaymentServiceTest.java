@@ -1,4 +1,4 @@
-package test;
+package fr.rekeningrijdersapplicatie.services;
 
 import fr.rekeningrijdersapplicatie.dao.implementations.PaymentDAOMockImpl;
 import fr.rekeningrijdersapplicatie.pojos.Payment;

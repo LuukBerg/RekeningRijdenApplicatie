@@ -7,6 +7,7 @@ package fr.rekeningrijdersapplicatie.apis;
 
 import fr.rekeningrijdersapplicatie.pojos.Invoice;
 import fr.rekeningrijdersapplicatie.pojos.User;
+import fr.rekeningrijdersapplicatie.pojos.UserInfo;
 import java.util.Set;
 
 /**
@@ -15,7 +16,7 @@ import java.util.Set;
  */
 public interface IRekeningAdministratieAPI {
     
-    String getUUID(User user);
+    UserInfo getUserInfo(String bsn);
     
     Set<Invoice> getInvoices(User user);
 }

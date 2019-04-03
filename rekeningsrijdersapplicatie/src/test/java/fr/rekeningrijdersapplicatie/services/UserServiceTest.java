@@ -1,4 +1,4 @@
-package test;
+package fr.rekeningrijdersapplicatie.services;
 
 import fr.rekeningrijdersapplicatie.apis.RekeningAdministratieAPIMock;
 import fr.rekeningrijdersapplicatie.dao.implementations.UserDAOMockImpl;

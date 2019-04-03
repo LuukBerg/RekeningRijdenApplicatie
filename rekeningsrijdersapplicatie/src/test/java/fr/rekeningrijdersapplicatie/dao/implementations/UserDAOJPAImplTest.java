@@ -28,13 +28,13 @@ public class UserDAOJPAImplTest {
     
     private static EntityManagerFactory entityManagerFactory;
     private static EntityManager entityManager;
-    private static UserDAOJPAImpl userService;
+    private static UserDAOJPAImpl userDao;
 
     @BeforeClass
     public static void setUp() {
         UserDAOJPAImplTest.entityManagerFactory = Persistence.createEntityManagerFactory("KwetterPUTest");
         UserDAOJPAImplTest.entityManager = entityManagerFactory.createEntityManager();
-        UserDAOJPAImplTest.userService = new UserDAOJPAImpl(entityManager);
+        UserDAOJPAImplTest.userDao = new UserDAOJPAImpl(entityManager);
     }
 
     @AfterClass
@@ -51,8 +51,15 @@ public class UserDAOJPAImplTest {
      * Test of register method, of class UserDAOJPAImpl.
      */
     @Test
-    public void testRegister() throws Exception {
+    public void testRegister() {
+        RegistrationInfo registrationInfo = new RegistrationInfo();
+        registrationInfo.setUsername("jan123");
+        registrationInfo.setPassword("wachtw00rd");
+        registrationInfo.setEmail("jan123@hotmail.com");
         
+        entityManager.getTransaction().begin();
+        entityManager.persist(registrationInfo);
+        entityManager.getTransaction().commit();
     }
 
     /**

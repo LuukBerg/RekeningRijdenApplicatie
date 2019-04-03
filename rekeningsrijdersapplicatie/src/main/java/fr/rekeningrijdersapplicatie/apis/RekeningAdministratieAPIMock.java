@@ -7,6 +7,7 @@ package fr.rekeningrijdersapplicatie.apis;
 
 import fr.rekeningrijdersapplicatie.pojos.Invoice;
 import fr.rekeningrijdersapplicatie.pojos.User;
+import fr.rekeningrijdersapplicatie.pojos.UserInfo;
 import fr.rekeningrijdersapplicatie.qualifiers.RekeningAdministratieMock;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -37,9 +38,8 @@ public class RekeningAdministratieAPIMock implements IRekeningAdministratieAPI {
     }
 
     @Override
-    public String getUUID(User user) {
-        long userId = user.getId();
-        return uuidMap.get(userId);
+    public UserInfo getUserInfo(String bsn) {
+        return null;
     }
 
     @Override

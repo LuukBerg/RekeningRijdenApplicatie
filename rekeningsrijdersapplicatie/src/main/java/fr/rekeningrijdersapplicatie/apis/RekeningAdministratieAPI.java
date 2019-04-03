@@ -7,6 +7,7 @@ package fr.rekeningrijdersapplicatie.apis;
 
 import fr.rekeningrijdersapplicatie.pojos.Invoice;
 import fr.rekeningrijdersapplicatie.pojos.User;
+import fr.rekeningrijdersapplicatie.pojos.UserInfo;
 import java.util.Set;
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
@@ -21,7 +22,7 @@ public class RekeningAdministratieAPI implements IRekeningAdministratieAPI {
     }
 
     @Override
-    public String getUUID(User user) {
+    public UserInfo getUserInfo(String bsn) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
