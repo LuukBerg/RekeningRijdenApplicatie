@@ -2,7 +2,6 @@ package fr.rekeningrijdersapplicatie.services;
 
 import fr.rekeningrijdersapplicatie.apis.RekeningAdministratieAPIMock;
 import fr.rekeningrijdersapplicatie.dao.implementations.UserDAOJPAImpl;
-import fr.rekeningrijdersapplicatie.dao.implementations.UserDAOJPAImplTest;
 import fr.rekeningrijdersapplicatie.dao.implementations.UserDAOMockImpl;
 import fr.rekeningrijdersapplicatie.pojos.LoginInfo;
 import fr.rekeningrijdersapplicatie.pojos.RegistrationInfo;
@@ -17,7 +16,7 @@ import static org.junit.Assert.*;
 
 public class UserServiceTest {
 
-    private static UserService mockUserService;
+    //private static UserService mockUserService;
     private static RegistrationInfo registerInfo;
     private static LoginInfo loginInfo;
     
@@ -41,7 +40,7 @@ public class UserServiceTest {
         UserServiceTest.entityManager = entityManagerFactory.createEntityManager();
         UserServiceTest.jpaUserService = new UserService(new UserDAOJPAImpl(entityManager), new RekeningAdministratieAPIMock());
         
-        mockUserService = new UserService(new UserDAOMockImpl(), new RekeningAdministratieAPIMock());
+        //mockUserService = new UserService(new UserDAOMockImpl(), new RekeningAdministratieAPIMock());
         
         registerInfo = new RegistrationInfo();
         registerInfo.setEmail("user@test.com");
@@ -50,8 +49,8 @@ public class UserServiceTest {
         registerInfo.setBsn("testbsn");
 
         loginInfo = new LoginInfo();
-        loginInfo.setUsername("User_343");
-        loginInfo.setPassword("Fsjksdi332");
+        loginInfo.setUsername(registerInfo.getUsername());
+        loginInfo.setPassword(registerInfo.getPassword());
     }
 
     @Test
@@ -59,9 +58,10 @@ public class UserServiceTest {
         jpaUserService.register(registerInfo);
 
         User user = jpaUserService.login(loginInfo);
+        
+        assertNotNull(user);
 
         assertEquals(user.getEmail(), registerInfo.getEmail());
         assertEquals(user.getUsername(), registerInfo.getUsername());
-        assertEquals(user.getId(), 0);
     }
 }

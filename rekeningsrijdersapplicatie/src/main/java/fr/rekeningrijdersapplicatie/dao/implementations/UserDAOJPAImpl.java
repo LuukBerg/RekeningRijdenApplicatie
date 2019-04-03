@@ -2,12 +2,15 @@ package fr.rekeningrijdersapplicatie.dao.implementations;
 
 import fr.rekeningrijdersapplicatie.dao.interfaces.IUserDAO;
 import fr.rekeningrijdersapplicatie.pojos.*;
+import java.util.Iterator;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.ejb.Stateless;
 import javax.enterprise.inject.Default;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -36,26 +39,50 @@ public class UserDAOJPAImpl implements IUserDAO {
 
     @Override
     public User login(LoginInfo loginInfo) {
-        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-        CriteriaQuery<User> criteriaQuery = criteriaBuilder.createQuery(User.class);
-        Root<User> root = criteriaQuery.from(User.class);
-        criteriaQuery.select(root);
+        Query query = entityManager.createNativeQuery("SELECT u.id, u.email, u.username, u.uuid, u.enabled FROM rekapp_user u WHERE u.username = :username AND u.password = :password");
+//        Query query = entityManager.createQuery("SELECT u.id, u.email, u.username, u.uuid, u.enabled FROM rekapp_user u WHERE u.username = :username AND u.password = :password");
+        query.setParameter("username", loginInfo.getUsername());
+        query.setParameter("password", loginInfo.getPassword());
+//        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+//        CriteriaQuery<User> criteriaQuery = criteriaBuilder.createQuery(User.class);
+//        Root<User> root = criteriaQuery.from(User.class);
+//        criteriaQuery.select(root);
+//
+//        TypedQuery<User> query = entityManager.createQuery(criteriaQuery);
+//
+//        ParameterExpression<String> username = criteriaBuilder.parameter(String.class);
+//        criteriaQuery.where(criteriaBuilder.equal(root.get("username"), username));
+//        
+////        ParameterExpression<String> password = criteriaBuilder.parameter(String.class);
+////        criteriaQuery.where(criteriaBuilder.equal(root.get("password"), password));
+//        
+//        query.setParameter(username, loginInfo.getUsername());
+////        query.setParameter(password, loginInfo.getPassword());
 
-        TypedQuery<User> query = entityManager.createQuery(criteriaQuery);
+        List resultList = query.getResultList();
+        Iterator iterator = resultList.iterator();
 
-        ParameterExpression<String> username = criteriaBuilder.parameter(String.class);
-        criteriaQuery.where(criteriaBuilder.equal(root.get("username"), username));
-        
-//        ParameterExpression<String> password = criteriaBuilder.parameter(String.class);
-//        criteriaQuery.where(criteriaBuilder.equal(root.get("password"), password));
-        
-        query.setParameter(username, loginInfo.getUsername());
-//        query.setParameter(password, loginInfo.getPassword());
+        if (iterator.hasNext()) {
+            try {
+                Object[] obj = (Object[]) iterator.next();
+                long id = ((Number) obj[0]).longValue();
+                String email = (String) obj[1];
+                String username = (String) obj[2];
+                String uuid = (String) obj[3];
+                boolean enabled = ((Boolean) obj[4]);
 
-        try {
-            return query.getSingleResult();
-        } catch (Exception ex) {
-            Logger.getLogger(UserDAOJPAImpl.class.getName()).log(Level.SEVERE, null, ex);
+                User user = new User();
+                user.setId(id);
+                user.setEmail(email);
+                user.setUsername(username);
+                user.setUuid(uuid);
+                user.setEnabled(enabled);
+                return user;
+            } catch (Exception ex) {
+                Logger.getLogger(UserDAOJPAImpl.class.getName()).log(Level.SEVERE, null, ex);
+                return null;
+            }
+        } else {
             return null;
         }
     }
