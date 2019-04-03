@@ -40,9 +40,10 @@ public class UserDAOJPAImpl implements IUserDAO {
     @Override
     public User login(LoginInfo loginInfo) {
         Query query = entityManager.createNativeQuery("SELECT u.id, u.email, u.username, u.uuid, u.enabled FROM rekapp_user u WHERE u.username = :username AND u.password = :password");
-//        Query query = entityManager.createQuery("SELECT u.id, u.email, u.username, u.uuid, u.enabled FROM rekapp_user u WHERE u.username = :username AND u.password = :password");
+        //Query query = entityManager.createQuery("SELECT u.id, u.email, u.username, u.uuid, u.enabled FROM userlogindaoobj u WHERE u.username = :username AND u.password = :password");
         query.setParameter("username", loginInfo.getUsername());
         query.setParameter("password", loginInfo.getPassword());
+        
 //        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
 //        CriteriaQuery<User> criteriaQuery = criteriaBuilder.createQuery(User.class);
 //        Root<User> root = criteriaQuery.from(User.class);
