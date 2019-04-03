@@ -29,8 +29,8 @@ public class UserService {
         this.rekeningAdministratieAPI = rekeningAdministratieAPI;
     }
 
-    public User register(RegistrationInfo registrationInfo){
-        return userDao.register(registrationInfo);
+    public void register(RegistrationInfo registrationInfo){
+        userDao.register(registrationInfo);
     }
 
     public User login(LoginInfo loginInfo){

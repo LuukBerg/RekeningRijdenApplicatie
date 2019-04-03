@@ -19,12 +19,11 @@ public class UserDAOJPAImpl implements IUserDAO {
         this.entityManager = entityManager;
     }
 
-    public UserDAOJPAImpl() {
-    }
-
     @Override
     public void register(RegistrationInfo registrationInfo) {
-        
+        entityManager.getTransaction().begin();
+        entityManager.persist(registrationInfo);
+        entityManager.getTransaction().commit();
     }
 
     @Override
