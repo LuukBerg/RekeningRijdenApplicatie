@@ -6,8 +6,6 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
 public class RekeningAdministratieAPIMockTest {
@@ -36,17 +34,6 @@ public class RekeningAdministratieAPIMockTest {
         user3.setUuid("tuyioupjdkfbs");
         user3.setEmail("user3@mail.net");
         user3.setUsername("user3_acc123");
-    }
-
-    @Test
-    public void getUUID() {
-//        String user1UUID = mock.getUUID(user1);
-//        String user2UUID = mock.getUUID(user2);
-//        String user3UUID = mock.getUUID(user3);
-//
-//        Assert.assertEquals(user1UUID, "asdasdqweqwe");
-//        Assert.assertEquals(user2UUID, "3rytrfdgdf");
-//        Assert.assertEquals(user3UUID, "tuyioupjdkfbs");
     }
 
     @Test

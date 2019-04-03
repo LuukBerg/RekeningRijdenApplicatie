@@ -44,8 +44,8 @@ public class UserServiceTest {
         
         registerInfo = new RegistrationInfo();
         registerInfo.setEmail("user@test.com");
-        registerInfo.setUsername("User_343");
-        registerInfo.setPassword("Fsjksdi332");
+        registerInfo.setUsername("User_34355");
+        registerInfo.setPassword("Fsjksdi3325");
         registerInfo.setBsn("testbsn");
 
         loginInfo = new LoginInfo();

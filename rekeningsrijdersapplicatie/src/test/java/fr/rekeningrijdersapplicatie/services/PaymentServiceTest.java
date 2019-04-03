@@ -2,11 +2,9 @@ package fr.rekeningrijdersapplicatie.services;
 
 import fr.rekeningrijdersapplicatie.dao.implementations.PaymentDAOMockImpl;
 import fr.rekeningrijdersapplicatie.pojos.Payment;
-import fr.rekeningrijdersapplicatie.services.PaymentService;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-//import java.util.Iterator;
 
 public class PaymentServiceTest {
 
@@ -21,16 +19,6 @@ public class PaymentServiceTest {
     public void getPayments() {
         Assert.assertNotNull(paymentService.getPayments());
         Assert.assertEquals(2, paymentService.getPayments().size());
-
-//        Iterator<Payment> iterator = paymentService.getPayments().iterator();
-
-//        Payment payment1 = iterator.next();
-//
-//        Assert.assertEquals(1, payment1.getId());
-//
-//        Payment payment2 = iterator.next();
-//
-//        Assert.assertEquals(2, payment2.getId());
     }
 
     @Test
