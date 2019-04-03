@@ -20,8 +20,8 @@ public class UserDAOJPAImpl implements IUserDAO {
     }
 
     @Override
-    public User register(RegistrationInfo registrationInfo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void register(RegistrationInfo registrationInfo) {
+        
     }
 
     @Override
@@ -33,19 +33,9 @@ public class UserDAOJPAImpl implements IUserDAO {
     public Set<Vehicle> getVehicles() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    @Override
-    public UserInfo getUserInfo() {
-        return null;
-    }
-
-    @Override
-    public void updateUserInfo(UserInfo userInfo) {
-        
-    }
     
     @Override
-    public User findByID(int id){
-        return null;
+    public User findByID(long id){
+        return entityManager.find(User.class, id);
     }
 }

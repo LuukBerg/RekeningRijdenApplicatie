@@ -1,11 +1,13 @@
 package fr.rekeningrijdersapplicatie.pojos;
 
 public class UserInfo {
+
     private String firstname;
     private String lastname;
     private String address;
     private String city;
     private String zipcode;
+    private String uuid;
 
     public String getFirstname() {
         return firstname;
@@ -45,6 +47,14 @@ public class UserInfo {
 
     public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
 }

@@ -14,10 +14,10 @@ public class UserDAOMockImpl implements IUserDAO {
 
     private final List<User> users = new ArrayList<User>();
     
-    private static int index = 0;
+    private static long index = 0;
 
     @Override
-    public User register(RegistrationInfo registrationInfo) {
+    public void register(RegistrationInfo registrationInfo) {
         User user = new User();
 
         user.setId(index++);
@@ -25,8 +25,6 @@ public class UserDAOMockImpl implements IUserDAO {
         user.setEmail(registrationInfo.getEmail());
 
         users.add(user);
-
-        return user;
     }
 
     @Override
@@ -42,19 +40,16 @@ public class UserDAOMockImpl implements IUserDAO {
     public Set<Vehicle> getVehicles() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    @Override
-    public UserInfo getUserInfo() {
-        return null;
-    }
-
-    @Override
-    public void updateUserInfo(UserInfo userInfo) {
-        
-    }
     
     @Override
-    public User findByID(int id){
+    public User findByID(long id){
+        for(int i = 0; i < users.size(); i++){
+            User user = users.get(i);
+            long userId = user.getId();
+            if(userId == id)
+                return user;
+        }
+        
         return null;
     }
 }

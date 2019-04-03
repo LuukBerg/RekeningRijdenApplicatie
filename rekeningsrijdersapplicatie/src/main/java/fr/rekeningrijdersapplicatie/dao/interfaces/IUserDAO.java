@@ -5,15 +5,11 @@ import fr.rekeningrijdersapplicatie.pojos.*;
 import java.util.Set;
 
 public interface  IUserDAO {
-    User register(RegistrationInfo registrationInfo);
+    void register(RegistrationInfo registrationInfo);
 
     User login(LoginInfo loginInfo);
 
     Set<Vehicle> getVehicles();
-
-    UserInfo getUserInfo();
-
-    void updateUserInfo(UserInfo userInfo);
     
-    User findByID(int id);
+    User findByID(long id);
 }
