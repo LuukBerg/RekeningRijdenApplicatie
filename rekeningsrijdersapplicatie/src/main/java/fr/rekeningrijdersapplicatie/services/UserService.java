@@ -60,6 +60,10 @@ public class UserService {
         return userDao.login(loginInfo);
     }
     
+    public void updateUser(User user){
+        userDao.updateUser(user);
+    }
+    
     public Set<Invoice> getInvoices(User user){
         Set<Invoice> invoices = rekeningAdministratieAPI.getInvoices(user);
         Set<Payment> payments = paymentDao.getPayments(user);
