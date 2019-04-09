@@ -8,7 +8,7 @@ package fr.rekeningrijdersapplicatie.schedulers;
 import fr.rekeningrijdersapplicatie.dao.interfaces.IPaymentDAO;
 import fr.rekeningrijdersapplicatie.pojos.Payment;
 import fr.rekeningrijdersapplicatie.qualifiers.PaymentDAOMock;
-import java.util.Date;
+import java.sql.Date;
 import java.util.Set;
 import javax.ejb.Schedule;
 import javax.ejb.Singleton;
@@ -27,7 +27,7 @@ public class PaymentSubmissionScheduler {
     
     @Schedule(hour = "24", persistent = true)
     public void sendPayments(){
-        Set<Payment> payments = paymentDao.getPayments(new Date());
+        //Set<Payment> payments = paymentDao.getPayments(new Date);
         //TODO - Send payments.
     }
 }

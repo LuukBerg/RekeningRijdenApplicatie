@@ -2,7 +2,6 @@ package fr.rekeningrijdersapplicatie.services;
 
 import fr.rekeningrijdersapplicatie.apis.RekeningAdministratieAPIMock;
 import fr.rekeningrijdersapplicatie.dao.implementations.UserDAOJPAImpl;
-import fr.rekeningrijdersapplicatie.dao.implementations.UserDAOMockImpl;
 import fr.rekeningrijdersapplicatie.pojos.LoginInfo;
 import fr.rekeningrijdersapplicatie.pojos.RegistrationInfo;
 import fr.rekeningrijdersapplicatie.pojos.User;
@@ -24,16 +23,6 @@ public class UserServiceTest {
     private static EntityManager entityManager;
     private static UserService jpaUserService;
 
-    @AfterClass
-    public static void tearDown() {
-        if (entityManager != null) {
-            entityManager.close();
-        }
-        if (entityManagerFactory != null) {
-            entityManagerFactory.close();
-        }
-    }
-
     @BeforeClass
     public static void setUp() {
         UserServiceTest.entityManagerFactory = Persistence.createEntityManagerFactory("RekAppPUTest");
@@ -51,6 +40,16 @@ public class UserServiceTest {
         loginInfo = new LoginInfo();
         loginInfo.setUsername(registerInfo.getUsername());
         loginInfo.setPassword(registerInfo.getPassword());
+    }
+
+    @AfterClass
+    public static void tearDown() {
+        if (entityManager != null) {
+            entityManager.close();
+        }
+        if (entityManagerFactory != null) {
+            entityManagerFactory.close();
+        }
     }
 
     @Test

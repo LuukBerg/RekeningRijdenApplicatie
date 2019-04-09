@@ -2,6 +2,7 @@ package fr.rekeningrijdersapplicatie.pojos;
 
 import fr.rekeningrijdersapplicatie.enumerations.PaymentStatus;
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -20,8 +21,14 @@ public class Payment implements Serializable {
     @Column(nullable = false, unique = true)
     private String invoiceUuid;
     
+    @Column(nullable = false)
+    private String userUuid;
+    
     @Enumerated(EnumType.STRING)
     private PaymentStatus paymentStatus;
+    
+    @Column(nullable = false)
+    private Date date;
 
     public long getId() {
         return id;
@@ -45,6 +52,22 @@ public class Payment implements Serializable {
 
     public void setPaymentStatus(PaymentStatus paymentStatus) {
         this.paymentStatus = paymentStatus;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public String getUserUuid() {
+        return userUuid;
+    }
+
+    public void setUserUuid(String userUuid) {
+        this.userUuid = userUuid;
     }
     
 }

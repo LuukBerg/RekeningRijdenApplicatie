@@ -1,6 +1,7 @@
 package fr.rekeningrijdersapplicatie.controllers;
 
 import fr.rekeningrijdersapplicatie.pojos.Payment;
+import fr.rekeningrijdersapplicatie.pojos.User;
 import fr.rekeningrijdersapplicatie.services.PaymentService;
 import java.util.Date;
 import java.util.Set;
@@ -28,7 +29,11 @@ public class PaymentController {
     private PaymentService paymentService;
     
     public Set<Payment> getPayments(Date date){
-        return paymentService.getPayments();
+        return paymentService.getPayments(date);
+    }
+    
+    public Set<Payment> getPayments(User user){
+        return paymentService.getPayments(user);
     }
     
 }
