@@ -18,7 +18,7 @@ public class Payment implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String invoiceUuid;
     
     @Column(nullable = false)

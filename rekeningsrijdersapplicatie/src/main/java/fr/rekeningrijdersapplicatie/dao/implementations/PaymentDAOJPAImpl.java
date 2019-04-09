@@ -55,4 +55,5 @@ public class PaymentDAOJPAImpl implements IPaymentDAO {
         else
             return new HashSet<Payment>(resultList);
     }
+    
 }
