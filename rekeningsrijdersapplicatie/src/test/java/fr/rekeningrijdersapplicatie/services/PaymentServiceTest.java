@@ -1,8 +1,6 @@
 package fr.rekeningrijdersapplicatie.services;
 
-import fr.rekeningrijdersapplicatie.apis.RekeningAdministratieAPIMock;
 import fr.rekeningrijdersapplicatie.dao.implementations.PaymentDAOJPAImpl;
-import fr.rekeningrijdersapplicatie.dao.implementations.UserDAOJPAImpl;
 import fr.rekeningrijdersapplicatie.enumerations.PaymentStatus;
 import fr.rekeningrijdersapplicatie.pojos.Payment;
 import fr.rekeningrijdersapplicatie.pojos.User;
@@ -21,15 +19,12 @@ public class PaymentServiceTest {
     
     private static EntityManagerFactory entityManagerFactory;
     private static EntityManager entityManager;
-    private static UserService jpaUserService;
-
     private static PaymentService paymentService;
 
     @BeforeClass
     public static void setUp(){
         PaymentServiceTest.entityManagerFactory = Persistence.createEntityManagerFactory("RekAppPUTest");
         PaymentServiceTest.entityManager = entityManagerFactory.createEntityManager();
-        PaymentServiceTest.jpaUserService = new UserService(new UserDAOJPAImpl(entityManager), new RekeningAdministratieAPIMock());
         PaymentServiceTest.paymentService = new PaymentService(new PaymentDAOJPAImpl(entityManager));
     }
 
@@ -59,8 +54,8 @@ public class PaymentServiceTest {
         Set<Payment> payments = paymentService.getPayments(user);
         assertNotNull(payments);
         
-//        Payment payment2 = payments.iterator().next();
-//        assertEquals(payment.getInvoiceUuid(), payment2.getInvoiceUuid());
+        Payment payment2 = payments.iterator().next();
+        assertEquals(payment.getInvoiceUuid(), payment2.getInvoiceUuid());
     }
     
 }

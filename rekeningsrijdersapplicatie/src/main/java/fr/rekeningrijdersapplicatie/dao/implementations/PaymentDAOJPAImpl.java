@@ -12,6 +12,7 @@ import java.util.Date;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 @Stateless
 @Default
@@ -27,7 +28,7 @@ public class PaymentDAOJPAImpl implements IPaymentDAO {
     @Override
     public Set<Payment> getPayments(Date date) {
 //        SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd");
-        Query query = entityManager.createQuery("SELECT p.id, p.invoiceUuid, p.paymentStatus FROM Payment p WHERE p.date = :date");
+        TypedQuery<Payment> query = entityManager.createQuery("SELECT p FROM Payment p WHERE p.date = :date", Payment.class);
         query.setParameter("date", date);
         
         return getPayments(query);
@@ -42,14 +43,14 @@ public class PaymentDAOJPAImpl implements IPaymentDAO {
 
     @Override
     public Set<Payment> getPayments(User user) {
-        Query query = entityManager.createQuery("SELECT p.id, p.invoiceUuid, p.userUuid, p.paymentStatus, p.date FROM Payment p WHERE p.userUuid = :userUuid ORDER BY p.date");
+        TypedQuery<Payment> query = entityManager.createQuery("SELECT p FROM Payment p WHERE p.userUuid = :userUuid ORDER BY p.date", Payment.class);
         query.setParameter("userUuid", user.getUuid());
         
         return getPayments(query);
     }
     
-    private Set<Payment> getPayments(Query query){
-        List resultList = query.getResultList();
+    private Set<Payment> getPayments(TypedQuery<Payment> query){
+        List<Payment> resultList = query.getResultList();
         if(resultList.isEmpty())
             return null;
         else
