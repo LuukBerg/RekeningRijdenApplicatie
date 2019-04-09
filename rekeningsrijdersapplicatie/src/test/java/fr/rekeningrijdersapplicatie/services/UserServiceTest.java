@@ -2,17 +2,19 @@ package fr.rekeningrijdersapplicatie.services;
 
 import fr.rekeningrijdersapplicatie.apis.RekeningAdministratieAPIMock;
 import fr.rekeningrijdersapplicatie.dao.implementations.UserDAOJPAImpl;
-import fr.rekeningrijdersapplicatie.dao.implementations.UserDAOMockImpl;
 import fr.rekeningrijdersapplicatie.pojos.LoginInfo;
 import fr.rekeningrijdersapplicatie.pojos.RegistrationInfo;
 import fr.rekeningrijdersapplicatie.pojos.User;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class UserServiceTest {
 
